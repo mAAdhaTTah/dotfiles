@@ -16,6 +16,8 @@ install mysql
 install php55
 install node
 
-#Binaries
+# Casks
 
+cask install appcleaner
 cask install vlc
+cask install shuttle
