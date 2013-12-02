@@ -11,6 +11,6 @@ alias edit_php53ini='sudo nano /usr/local/etc/php/5.3/php.ini'
 alias edit_php54ini='sudo nano /usr/local/etc/php/5.4/php.ini'
 alias edit_php55ini='sudo nano /usr/local/etc/php/5.5/php.ini'
 
-# Homebrew Cash Update
+# Homebrew Cask Update
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
