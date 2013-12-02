@@ -5,6 +5,7 @@
 tap homebrew/dupes
 tap josegonzalez/homebrew-php
 tap tap phinze/homebrew-cask
+tap caskroom/versions
 
 # Installs
 
@@ -21,3 +22,4 @@ install node
 cask install appcleaner
 cask install vlc
 cask install shuttle
+cask install pokertracker
