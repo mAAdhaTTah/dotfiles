@@ -1,6 +1,6 @@
 [core]
         # Use custom `.gitignore` and `.gitattributes`
-        excludesfile = ~/.gitignore
+        excludesfile = ~/.gitignore_global
         attributesfile = ~/.gitattributes
 [mergetool]
 	keepBackup = true
