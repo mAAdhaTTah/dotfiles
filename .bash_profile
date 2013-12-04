@@ -12,3 +12,14 @@ alias edit_phpini='sudo nano /usr/local/etc/php/5.5/php.ini'
 # Homebrew Cask Update
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# New Default Editor
+
+export EDITOR=nano
+
+# Function to start and stop the web server
+
+webdev() {
+	sudo apachectl $1
+	mysql.server $1
+}
