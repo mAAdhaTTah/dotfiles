@@ -1,7 +1,6 @@
 # $PATH Changes
 
-export PATH=/usr/local/bin:$PATH
-export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
+export PATH="/usr/local/bin:$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
 
 # Aliases
 
