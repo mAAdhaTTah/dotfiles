@@ -1,0 +1,19 @@
+# To start, stop, and restart Apache and MySQL
+
+webdev() {
+	sudo apachectl $1
+	mysql.server $1
+}
+
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$@"
+}
+
+# Use Git’s colored diff when available
+hash git &>/dev/null
+if [ $? -eq 0 ]; then
+	function diff() {
+		git diff --no-index --color-words "$@"
+	}
+fi

@@ -1,0 +1,16 @@
+# Change default editor to the (ever-simple) nano
+
+export EDITOR=“nano”
+
+# Make sure homebrew-casks’s default install folder is /Applications
+# Maybe ~/Applications is better if only one user? Keeps system/user apps separate
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Larger bash history (allow 32³ entries; default is 500)
+# Source: simonowendesign/dotfiles
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"

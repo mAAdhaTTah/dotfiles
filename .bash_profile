@@ -1,27 +1,14 @@
-# $PATH Changes
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+# Source: simonowndesign/dotfiles
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && source "$file"
+done
+unset file
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# init z https://github.com/rupa/z
+. ~/z/z.sh
 
-# Aliases
-
-alias edit_apache='sudo nano /etc/apache2/httpd.conf'
-alias edit_hosts='sudo nano /etc/hosts'
-alias edit_vhosts='sudo nano /etc/apache2/extra/httpd-vhosts.conf'
-alias edit_phpini='sudo nano /usr/local/etc/php/5.5/php.ini'
-alias pgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
-alias dotfiles='cd ~/dotfiles/mAAdhaTTah/dotfiles'
-
-# Homebrew Cask Update
-
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# New Default Editor
-
-export EDITOR=nano
-
-# Function to start and stop the web server
-
-webdev() {
-	sudo apachectl $1
-	mysql.server $1
-}
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
