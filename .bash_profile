@@ -1,5 +1,4 @@
 # Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 # Source: simonowndesign/dotfiles
 for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
@@ -8,7 +7,10 @@ done
 unset file
 
 # init z https://github.com/rupa/z
-. ~/z/z.sh
+. ~/.z/z.sh
+
+# Move default data file into ~/.z
+export Z_DATA=$HOME/.z/.data
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
