@@ -1,6 +1,6 @@
 # Change default editor to the (ever-simple) nano
 
-export EDITOR=“nano”
+export EDITOR="nano"
 
 # Make sure homebrew-casks’s default install folder is /Applications
 # Maybe ~/Applications is better if only one user? Keeps system/user apps separate
