@@ -6,11 +6,11 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+# Move default data file into ~/.z
+export _Z_DATA=$HOME/.z/.data
+
 # init z https://github.com/rupa/z
 . ~/.z/z.sh
-
-# Move default data file into ~/.z
-export Z_DATA=$HOME/.z/.data
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
