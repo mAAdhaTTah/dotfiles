@@ -22,12 +22,17 @@ alias edit_phpini='sudo nano /usr/local/etc/php/5.5/php.ini'
 alias sites_backup='sudo rsync -zva --delete ~/Sites/ /Volumes/yossarian/Sites/'
 alias sites_restore='sudo rsync -zva --delete /Volumes/yossarian/Sites/'
 
+# Backup and restore dotfiles from network drive
+alias dotfiles_backup='sudo rsync -zva --delete ~/.dotfiles/ /Volumes/yossarian/.dotfiles/'
+alias dotfiles_restore='sudo rsync -zva --delete /Volumes/yossarian/.dotfiles/ ~/.dotfiles/'
+
 # Start postgres
 alias pgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
 
 # Go to dotfiles folder
-# Source: simonowendesign/dotfiles
 alias dotfiles='cd ~/.dotfiles/mAAdhaTTah/dotfiles'
+
+# Source: simonowendesign/dotfiles
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
