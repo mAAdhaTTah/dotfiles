@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 cd "$(dirname "${BASH_SOURCE}")"
 function doIt() {
-        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "scripts/" --exclude "turnkey.sh" \
+        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "scripts/" --exclude "turnkey.sh" --exclude "._*" \
                 --exclude "README.md" --exclude "Brewfile" --exclude "LICENSE-MIT.txt" -av --no-perms ../ ~
         source ~/.bash_profile
 }
