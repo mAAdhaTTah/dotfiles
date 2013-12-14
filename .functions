@@ -1,5 +1,4 @@
 # To start, stop, and restart Apache and MySQL
-
 webdev() {
 	sudo apachectl $1
 	mysql.server $1
