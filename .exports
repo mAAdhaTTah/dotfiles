@@ -2,10 +2,9 @@
 
 export EDITOR="nano"
 
-# Make sure homebrew-casks’s default install folder is ~/Applications
-# Keeps user and system installs separate
+# Make sure homebrew-casks’s default install folder is /Applications
 
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Larger bash history (allow 32³ entries; default is 500)
 # Source: simonowendesign/dotfiles
