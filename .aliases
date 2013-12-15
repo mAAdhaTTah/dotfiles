@@ -26,7 +26,7 @@ alias sites_restore='sudo rsync -zva --delete /Volumes/yossarian/Sites/'
 alias pgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
 
 # Go to dotfiles folder
-alias dotfiles='cd ~/Dropbox/.dotfiles/mAAdhaTTah/dotfiles'
+alias dotfiles='cd ~/Ubuntu\ One/.dotfiles/mAAdhaTTah/dotfiles'
 
 # Source: simonowendesign/dotfiles
 
