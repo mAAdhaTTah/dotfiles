@@ -47,7 +47,7 @@ cask install diffmerge
 cask install duplicate-annihilator
 cask install evernote
 cask install f-lux
-cask install cask install filebot
+cask install filebot
 cask install geekbench
 cask install google-chrome
 cask install grandperspective

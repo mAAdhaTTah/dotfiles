@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
 cd "$(dirname "${BASH_SOURCE}")"
 
-echo 'We're going to assume this is running from your newly downloaded Ubuntu One folder.'
-read -p 'If it isn't, stop it now, download and sync Ubuntu One, and start over. Want to stop? (y/n) ' -n 1
+echo 'We are going to assume this is running from your newly downloaded Ubuntu One folder.'
+read -p 'If it is not, stop it now, download and sync Ubuntu One, and start over. Want to stop? (y/n) ' -n 1
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 		exit
 fi
 
+echo ''
 echo 'First things first:'
 echo 'Activate dotfiles!'
 
 source scripts/sync.sh
 
-echo 'Next, let's get OS X's defaults set up the way we like.'
+echo "Next, let's get OS X's defaults set up the way we like."
 
-source scripts/.osx
+cd "$(dirname "${BASH_SOURCE}")"
+cd ..
+source scripts/osx.sh
 
 # Install Z and restore history
 
@@ -31,6 +34,8 @@ unset $REPLY
 echo 'Download all your apps from the Apple App Store.'
 echo 'Don't worry, I'll wait ;)'
 read -p "Press [Enter] when everything is downloaded."
+read -p "Now, open Xcode and accept the license. Press [Enter] when you've done that."
+read -p "Don't forget to install Command Line Tools!"
 
 echo 'Next up: Homebrew!'
 
@@ -44,7 +49,7 @@ brew doctor
 
 # Install all software
 
-read -p "Do you want to use homebrew-cask to install all your software? (y/n) " -n 1
+read -p "Do you want to use homebrew and cask to install all your software? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
         brew bundle scripts/Brewfile

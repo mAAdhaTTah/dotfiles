@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 cd "$(dirname "${BASH_SOURCE}")"
 
+# We had an error:
+# Set: Entry, ":FK_StandardViewSettings:IconViewSettings:arrangeBy", Does Not Exist
+# Set: Entry, ":FK_StandardViewSettings:IconViewSettings:iconSize", Does Not Exist
+
 # Much of this was aped from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
 # Ask for the administrator password upfront
@@ -17,7 +21,7 @@ read -p "Do you want to change your computer name? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 		# Ask for computer name
-        read -p "What do you want to name your computer? " -n 1
+        read -p "What do you want to name your computer? "
         echo
 		# Set computer name (as done via System Preferences → Sharing) based on input
 		sudo scutil --set ComputerName "$REPLY"
@@ -144,12 +148,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # Increase the size of icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
 # Use column view in all Finder windows by default
@@ -177,7 +179,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
-read -p "Do you want to wide all the apps in the dock? Only do this on a new install. (y/n) " -n 1
+read -p "Do you want to wipe all the apps in the dock? Only do this on a new install. (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	defaults write com.apple.dock persistent-apps -array
