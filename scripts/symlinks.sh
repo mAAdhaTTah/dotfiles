@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-cd $HOME
 
-for folder in ~/{Downloads,Documents,Dropbox,Movies,Music,Pictures,Public}; do
-	sudo rm -R "$file" && ln -s /Volumes/yossarian/"$file"
+for folder in {Downloads,Documents,Dropbox,Movies,Music,Pictures,Public}; do
+	if [ -d "$folder" ]; then
+		sudo rm -R ~/"$folder"
+	fi
+	ln -s /Volumes/yossarian/"$folder" ~/"$folder"
 done
 unset folder
-
-cd "$(dirname "${BASH_SOURCE}")"

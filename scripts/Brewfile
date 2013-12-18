@@ -14,12 +14,12 @@ tap caskroom/versions
 install git
 install brew-cask
 install osxfuse
-install composer
-install mysql
 install php55
-install node
 install ruby
 install python
+install node
+install composer
+install mysql
 install wget --enable-iri
 install coda-cli
 install bash
@@ -79,3 +79,4 @@ cask install unetbootin
 cask install virtualbox
 cask install vlc
 cask install zipeg
+cask alfred link

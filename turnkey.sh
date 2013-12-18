@@ -47,11 +47,13 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 brew doctor
 
+read -p "Fix any problems before moving on. Press [Enter] if you're good to go."
 # Install all software
 
 read -p "Do you want to use homebrew and cask to install all your software? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+	..
         brew bundle scripts/Brewfile
         echo 'Add "/usr/local/bin/bash" to "/etc/shells"'
         echo 'Check out https://github.com/Homebrew/homebrew/wiki/Gems%2C-Eggs-and-Perl-Modules for Ruby and Python stuff'

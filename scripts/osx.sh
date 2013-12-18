@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-cd "$(dirname "${BASH_SOURCE}")"
-
-# We had an error:
-# Set: Entry, ":FK_StandardViewSettings:IconViewSettings:arrangeBy", Does Not Exist
-# Set: Entry, ":FK_StandardViewSettings:IconViewSettings:iconSize", Does Not Exist
-
 # Much of this was aped from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
 # Ask for the administrator password upfront
@@ -169,6 +163,9 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool false
 # External drives remain mounted after logout / externel drives are mounted before first login (works for 10.6+)
 sudo defaults write /Library/Preferences/SystemConfiguration/autodiskmount AutomountDisksWithoutUserLogin -bool true
 
+# Remove arrow icon from aliases/symlinks
+sudo mv /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AliasBadgeIcon.icns /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AliasBadgeIcon-no.icns
+
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
@@ -216,5 +213,10 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 # Allow installing user scripts via GitHub or Userscripts.org
 defaults write com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
 defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+
+
+# Restart Dock and Finder
+killall Dock
+killall Finder
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
