@@ -11,13 +11,11 @@ echo ''
 echo 'First things first:'
 echo 'Activate dotfiles!'
 
-source scripts/sync.sh
+source sync.sh
 
 echo "Next, let's get OS X's defaults set up the way we like."
 
-cd "$(dirname "${BASH_SOURCE}")"
-cd ..
-source scripts/osx.sh
+source osx.sh
 
 # Install Z and restore history
 
@@ -48,13 +46,13 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 
 read -p "Fix any problems before moving on. Press [Enter] if you're good to go."
+
 # Install all software
 
 read -p "Do you want to use homebrew and cask to install all your software? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	..
-        brew bundle scripts/Brewfile
+        brew bundle Brewfile
         echo 'Add "/usr/local/bin/bash" to "/etc/shells"'
         echo 'Check out https://github.com/Homebrew/homebrew/wiki/Gems%2C-Eggs-and-Perl-Modules for Ruby and Python stuff'
 fi
@@ -69,7 +67,7 @@ unset $REPLY
 read -p "This will symlink your home directory to network drive locations. Do you want your home directory symlinked? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-        source scripts/symlinks.sh
+        source symlinks.sh
 fi
 unset $REPLY
 
