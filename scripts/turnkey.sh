@@ -22,7 +22,7 @@ source osx.sh
 read -p "This is going to install Z. Do you want Z installed? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ln -s ~/Ubuntu\ One/.dotfiles/mAAdhaTTah/dotfiles/.z ~/.z
+        ln -s ~/Sites/dotfiles/mAAdhaTTah/dotfiles/.z ~/.z
 fi
 unset $REPLY
 
