@@ -10,7 +10,7 @@ unset file
 export _Z_DATA=$HOME/.z/.data
 
 # init z https://github.com/rupa/z
-. ~/.z/z.sh
+source ~/.z/z.sh
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
