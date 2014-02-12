@@ -5,26 +5,9 @@
 		"For more information on how to configure, please see http://fitztrev.github.io/shuttle/"
 	],
 	"terminal": "Terminal.app",
-	"launch_at_login": false,
+	"launch_at_login": true,
 	"show_ssh_config_hosts": true,
 	"ssh_config_ignore_hosts": [],
 	"ssh_config_ignore_keywords": [],
-    "hosts": [
-        {
-            "Pianosa": [
-                {
-                    "name": "Dreedle",
-                    "cmd": "ssh dreedle@192.168.1.54"
-                },
-                {
-                    "name": "Yossarian",
-                    "cmd": "ssh yossarian@192.168.1.54"
-                }
-            ]
-        },
-        {
-            "name": "LiquidWeb",
-            "cmd": "ssh supcentr@67.225.249.111"
-        }
-    ]
+    "hosts": [ ]
 }
