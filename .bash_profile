@@ -6,6 +6,13 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+# Add bash completion
+# This doesn't seem to work
+# Z may be broken too - what's up?
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  bash $(brew --prefix)/etc/bash_completion
+fi
+
 # Move default data file into ~/.z
 export _Z_DATA=$HOME/.z/.data
 
