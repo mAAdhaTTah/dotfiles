@@ -4,6 +4,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 # Pause installation
 # Tell user to downloads apps from App Store
 
+echo "Step 1:"
 echo "Download all your apps from the Apple App Store."
 echo "Don't worry, I'll wait ;)"
 read -p "Press [Enter] when everything is downloaded."
@@ -27,40 +28,36 @@ read -p "Fix any problems before moving on. Press [Enter] if you're good to go."
 read -p "Do you want to use homebrew and cask to install all your software? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-        brew bundle Brewfile
+  brew bundle Brewfile
 fi
 unset $REPLY
-
-# Install gems
-# capistrano
-# capistrno-composer
-# bundler
-
-# Add Mackup restore
-# Note: we need to ask if we want to keep in sync, or just uninstall
-# We could get our ssh keys this way, but that seems like bad practice
-
-# Add Dropbox start
-
-# Add BTSync start
-
-# Add get ~/Sites
-# 1. Add private keys (need BTsync)
-# 2. git clone each site
 
 echo "Activate dotfiles"
 
 source sync.sh
 
-echo "Let's get OS X's defaults set up the way we like."
+# Add Dropbox start
 
-source osx.sh
+# Add BTSync start
 
 # Install Z and restore history
 
-read -p "This is going to install Z. Do you want Z installed? (y/n) " -n 1
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ln -s ~/Dropbox/.z ~/.z
-fi
-unset $REPLY
+echo "Install z from Dropbox via symlink"
+
+ln -s ~/Dropbox/.z ~/.z
+
+# Install gems
+
+source gems.sh
+
+# Add Mackup restore
+# Note: we need to ask if we want to keep in sync, or just uninstall
+# We could get our ssh keys this way, but that seems like bad practice
+
+# Add get ~/Sites
+# 1. Add private keys (need BTsync) - this will actually not be necessar
+# 2. git clone each site
+
+echo "Let's get OS X's defaults set up the way we like."
+
+source osx.sh
