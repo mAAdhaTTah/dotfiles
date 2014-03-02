@@ -32,6 +32,21 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 unset $REPLY
 
+# Ask for each secondary software
+
+secsoft = ("kext-utility" "kext-wizard" "pokertracker" "a-slower-speed-of-light" "backuploupe" "calibre" "debt-quencher" "duplicate-annihilator" "moneywell" "openemu" "pgadmin3" "picard" "slice-eq" "superduper")
+
+for soft in ${secsoft[@]}; do
+  read -p "Do you want to use homebrew and cask to install $soft? (y/n) " -n 1
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    brew cask install "$soft"
+  fi
+  unset $REPLY
+done
+unset soft
+unset secsoft
+
 echo "Activate dotfiles"
 
 source sync.sh
@@ -52,12 +67,31 @@ source gems.sh
 
 # Add Mackup restore
 # Note: we need to ask if we want to keep in sync, or just uninstall
-# We could get our ssh keys this way, but that seems like bad practice
 
 # Add get ~/Sites
-# 1. Add private keys (need BTsync) - this will actually not be necessar
+# 1. Add private keys (need BTsync) - this will actually not be necessary after .ssh/config is finished
 # 2. git clone each site
 
 echo "Let's get OS X's defaults set up the way we like."
 
 source osx.sh
+
+# Add licenses/accounts/config to:
+# 0. Alfred
+# 1. Bartender
+# 2. Cinch
+# 3. CleanMyMac
+# 4. Coda
+# 5. Codekit
+# 6. Crash plan - Note: this one need a file edited to access the server's CrashPlan
+# 7. Evernote
+# 8. F-lux
+# 9. Google Chrome
+# 10. Insync
+# 11. Moneywell
+# 12. MindNode Pro
+# 13. PokerTracker
+# 14. Dupelicate Annihilator
+# 15. SuperDuper!
+# 16. Thunderbird
+# 17. VirtualBox - Note: add synced VirtualBox VMs folder
