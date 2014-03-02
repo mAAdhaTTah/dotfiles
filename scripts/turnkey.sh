@@ -25,7 +25,7 @@ read -p "Fix any problems before moving on. Press [Enter] if you're good to go."
 
 # Install all software
 
-read -p "Do you want to use homebrew and cask to install all your software? (y/n) " -n 1
+read -p "Do you want to use homebrew and cask to install your required software? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   brew bundle Brewfile

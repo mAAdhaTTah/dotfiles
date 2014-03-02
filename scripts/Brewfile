@@ -31,13 +31,10 @@ install hr
 
 # Casks
 
-cask install a-slower-speed-of-light
 cask install adapter
 cask install alfred
 cask install all2mp3
-cask install backuploupe
 cask install bartender
-cask install calibre
 cask install cheatsheet
 cask install cinch
 cask install clamxav
@@ -46,10 +43,8 @@ cask install coda
 cask install codekit
 cask install color-picker-pro
 cask install crashplan
-cask install debt-quencher
 cask install deeper
 cask install diffmerge
-cask install duplicate-annihilator
 cask install evernote
 cask install f-lux
 cask install filebot
@@ -57,28 +52,18 @@ cask install fluid
 cask install geekbench
 cask install google-chrome
 cask install grandperspective
-cask install growlvoice
 cask install handbrake
 cask install id3-editor
 cask install insync
-cask install kext-utility
-cask install kext-wizard
 cask install launchcontrol
 cask install liteicon
 cask install mindnode-pro
-cask install moneywell
 cask install mou
 cask install omnidisksweeper
 cask install onyx
-cask install openemu
-cask install pgadmin3
-cask install picard
-cask install pokertracker
 cask install shuttle
 cask install skitch
 cask install skype
-cask install slice-eq
-cask install superduper
 cask install thunderbird
 cask install tower
 cask install transmit
