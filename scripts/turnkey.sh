@@ -102,7 +102,7 @@ sites = ("git@bitbucket.org:maadhattah/jamesdigioia.git" "git@bitbucket.org:maad
 
 for url in ${sites[@]}; do
   echo "Getting $url..."
-  git clone "$url"
+  git clone "$url" ~/Sites/
 done
 unset soft
 unset configsoft
