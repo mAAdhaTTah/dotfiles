@@ -35,6 +35,7 @@ cask install adapter
 cask install alfred
 cask install all2mp3
 cask install bartender
+cask install bittorrent-sync
 cask install cheatsheet
 cask install cinch
 cask install clamxav
@@ -43,6 +44,7 @@ cask install coda
 cask install codekit
 cask install color-picker-pro
 cask install crashplan
+cask install dropbox
 cask install deeper
 cask install diffmerge
 cask install evernote
@@ -51,6 +53,7 @@ cask install filebot
 cask install fluid
 cask install geekbench
 cask install google-chrome
+cask install google-drive
 cask install grandperspective
 cask install handbrake
 cask install id3-editor
