@@ -51,6 +51,12 @@ echo "Activate dotfiles"
 
 source sync.sh
 
+# Configure Google Chrome
+
+echo "Opening Google Chrome for configuration"
+open -a "Google Chrome.app"
+read -p "Press [Enter] when everything is configured."
+
 # Configure Dropbox
 
 echo "Opening Dropbox for configuration"
@@ -59,7 +65,7 @@ read -p "Press [Enter] when everything is configured."
 
 # Configure BTSync
 
-echo "Opening Dropbox for configuration"
+echo "Opening BTSync for configuration"
 open -a "BitTorrent Sync.app"
 read -p "Press [Enter] when everything is configured."
 
@@ -87,22 +93,36 @@ echo "Let's get OS X's defaults set up the way we like."
 
 source osx.sh
 
-# Add licenses/accounts/config to:
-# 0. Alfred
-# 1. Bartender
-# 2. Cinch
-# 3. CleanMyMac
-# 4. Coda
-# 5. Codekit
-# 6. Crash plan - Note: this one need a file edited to access the server's CrashPlan
-# 7. Evernote
-# 8. F-lux
-# 9. Google Chrome
-# 10. Insync
-# 11. Moneywell
-# 12. MindNode Pro
-# 13. PokerTracker
-# 14. Dupelicate Annihilator
-# 15. SuperDuper!
-# 16. Thunderbird
-# 17. VirtualBox - Note: add synced VirtualBox VMs folder
+# Add licenses/accounts/config
+
+configsoft = ("Alfred Preferences" "Bartender" "Cinch" "CleanMyMac 2" "Coda 2" "CodeKit" "CrashPlan" "Evernote" "Flux" "Insync" "MoneyWell" "MindNode Pro" "PokerTracker 4" "Duplicate Annihilator" "SuperDuper!" "VirtualBox" "mysms" "xScan" "CleanMyDrive" "POP" "Multimon" "Kindle" "Pocket")
+
+for soft in ${configsoft[@]}; do
+  read -p "Do you want to configure $soft? (y/n) " -n 1
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Opening $soft for configuration"
+    open -a "$soft.app"
+    read -p "Press [Enter] when everything is configured."
+  fi
+  unset $REPLY
+done
+unset soft
+unset configsoft
+
+# Add OSX accounts
+# @todo include account information here (everything but passwords)
+# @todo handle rules
+
+accounts = ("Google Work" "Google Personal" "Twitter" "Facebook" "LinkedIn" "3 email accounts")
+
+for account in ${accounts[@]}; do
+  read -p "Do you want to configure $soft? (y/n) " -n 1
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    read -p "Press [Enter] when you have configured $account."
+  fi
+  unset $REPLY
+done
+unset soft
+unset configsoft
