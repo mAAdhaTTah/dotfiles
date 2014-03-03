@@ -181,6 +181,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	defaults write com.apple.dock persistent-apps -array
 fi
+unset REPLY
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -214,6 +215,31 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 defaults write com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
 defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
 
+read -p "Are you running this computer off an SSD? (y/n) " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+
+  ###############################################################################
+  # SSD-specific tweaks                                                         #
+  ###############################################################################
+  
+  # Disable local Time Machine snapshots
+  sudo tmutil disablelocal
+  
+  # Disable hibernation (speeds up entering sleep mode)
+  sudo pmset -a hibernatemode 0
+  
+  # Remove the sleep image file to save disk space
+  sudo rm /Private/var/vm/sleepimage
+  # Create a zero-byte file instead…
+  sudo touch /Private/var/vm/sleepimage
+  # …and make sure it can’t be rewritten
+  sudo chflags uchg /Private/var/vm/sleepimage
+  
+  # Disable the sudden motion sensor as it’s not useful for SSDs
+  sudo pmset -a sms 0
+fi
+unset REPLY
 
 # Restart Dock and Finder
 killall Dock
