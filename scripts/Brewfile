@@ -64,7 +64,6 @@ cask install onyx
 cask install shuttle
 cask install skitch
 cask install skype
-cask install thunderbird
 cask install tower
 cask install transmit
 cask install unetbootin
