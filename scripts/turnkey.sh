@@ -51,23 +51,26 @@ echo "Activate dotfiles"
 
 source sync.sh
 
-# Configure Google Chrome
+echo "Let's get OS X's defaults set up the way we like."
+
+source osx.sh
+
+# Configure 3 apps
+# @todo make into single function
 
 echo "Opening Google Chrome for configuration"
 open -a "Google Chrome.app"
 read -p "Press [Enter] when everything is configured."
 
-# Configure Dropbox
-
 echo "Opening Dropbox for configuration"
 open -a "Dropbox.app"
 read -p "Press [Enter] when everything is configured."
 
-# Configure BTSync
-
 echo "Opening BTSync for configuration"
 open -a "BitTorrent Sync.app"
 read -p "Press [Enter] when everything is configured."
+
+read -p "Press [Enter] when everything all three apps are synced."
 
 # Install Z and restore history
 
@@ -81,17 +84,31 @@ source gems.sh
 
 # Add Mackup restore
 # Note: we need to ask if we want to keep in sync, or just uninstall
-# Add sync apache to mackup?
+# @todo sync apache in mackup
 
-# Add get ~/Sites
-# 1. Add private keys (need BTsync) - this will actually not be necessary after .ssh/config is finished
-# 2. git clone each site
-# Set up databases for all sites
-# Can we sync from remote automagically too?
+echo "Time to run Mackup"
+mackup restore
 
-echo "Let's get OS X's defaults set up the way we like."
+read -p "Do you want to uninstall Mackup? This will remove its syncing capabilities. Do this if the username isn't Yossarian. (y/n) " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  mackup uninstall
+fi
+unset $REPLY
 
-source osx.sh
+# Get all ~/Sites
+
+sites = ("git@bitbucket.org:maadhattah/jamesdigioia.git" "git@bitbucket.org:maadhattah/job-hunter.git" "git@github.com:mAAdhaTTah/vagrantpress.git" "git@bitbucket.org:maadhattah/quenchnj.git" "git@github.com:mAAdhaTTah/roots-semantic-codekit.git" "git@github.com:twbs/bootstrap.git")
+
+for url in ${sites[@]}; do
+  echo "Getting $url..."
+  git clone "$url"
+done
+unset soft
+unset configsoft
+
+# @todo set up databases
+# @todo sync databases from remote
 
 # Add licenses/accounts/config
 
@@ -112,7 +129,7 @@ unset configsoft
 
 # Add OSX accounts
 # @todo include account information here (everything but passwords)
-# @todo handle rules
+# @todo handle mail rules
 
 accounts = ("Google Work" "Google Personal" "Twitter" "Facebook" "LinkedIn" "3 email accounts")
 
@@ -126,3 +143,5 @@ for account in ${accounts[@]}; do
 done
 unset soft
 unset configsoft
+
+# @todo add Terminal to right-click services
