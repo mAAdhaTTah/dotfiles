@@ -99,6 +99,7 @@ unset $REPLY
 # Get all ~/Sites
 
 sites = ("git@bitbucket.org:maadhattah/jamesdigioia.git" "git@bitbucket.org:maadhattah/job-hunter.git" "git@github.com:mAAdhaTTah/vagrantpress.git" "git@bitbucket.org:maadhattah/quenchnj.git" "git@github.com:mAAdhaTTah/roots-semantic-codekit.git" "git@github.com:twbs/bootstrap.git")
+# @todo add wp-gitdown
 
 for url in ${sites[@]}; do
   echo "Getting $url..."
@@ -113,6 +114,8 @@ unset configsoft
 # Add licenses/accounts/config
 
 configsoft = ("Alfred Preferences" "Bartender" "Cinch" "CleanMyMac 2" "Coda 2" "CodeKit" "CrashPlan" "Evernote" "Flux" "Insync" "MoneyWell" "MindNode Pro" "PokerTracker 4" "Duplicate Annihilator" "SuperDuper!" "VirtualBox" "mysms" "xScan" "CleanMyDrive" "POP" "Multimon" "Kindle" "Pocket" "Wunderlist" "Google Drive")
+
+# @todo configure CrashPlan in particular
 
 for soft in ${configsoft[@]}; do
   read -p "Do you want to configure $soft? (y/n) " -n 1
