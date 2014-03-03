@@ -51,9 +51,17 @@ echo "Activate dotfiles"
 
 source sync.sh
 
-# Add Dropbox start
+# Configure Dropbox
 
-# Add BTSync start
+echo "Opening Dropbox for configuration"
+open -a "Dropbox.app"
+read -p "Press [Enter] when everything is configured."
+
+# Configure BTSync
+
+echo "Opening Dropbox for configuration"
+open -a "BitTorrent Sync.app"
+read -p "Press [Enter] when everything is configured."
 
 # Install Z and restore history
 
@@ -67,10 +75,13 @@ source gems.sh
 
 # Add Mackup restore
 # Note: we need to ask if we want to keep in sync, or just uninstall
+# Add sync apache to mackup?
 
 # Add get ~/Sites
 # 1. Add private keys (need BTsync) - this will actually not be necessary after .ssh/config is finished
 # 2. git clone each site
+# Set up databases for all sites
+# Can we sync from remote automagically too?
 
 echo "Let's get OS X's defaults set up the way we like."
 
