@@ -34,7 +34,7 @@ unset $REPLY
 
 # Ask for each secondary software
 
-secsoft = ("kext-utility" "kext-wizard" "pokertracker" "a-slower-speed-of-light" "backuploupe" "calibre" "debt-quencher" "duplicate-annihilator" "moneywell" "openemu" "pgadmin3" "picard" "slice-eq" "superduper")
+secsoft=( "kext-utility" "kext-wizard" "pokertracker" "a-slower-speed-of-light" "backuploupe" "calibre" "debt-quencher" "duplicate-annihilator" "moneywell" "openemu" "pgadmin3" "picard" "slice-eq" "superduper" )
 
 for soft in ${secsoft[@]}; do
   read -p "Do you want to use homebrew and cask to install $soft? (y/n) " -n 1
@@ -97,13 +97,14 @@ fi
 unset $REPLY
 
 # Get all ~/Sites
+# @todo need to deal with ssh-keys
 
-sites = ("git@bitbucket.org:maadhattah/jamesdigioia.git" "git@bitbucket.org:maadhattah/job-hunter.git" "git@github.com:mAAdhaTTah/vagrantpress.git" "git@bitbucket.org:maadhattah/quenchnj.git" "git@github.com:mAAdhaTTah/roots-semantic-codekit.git" "git@github.com:twbs/bootstrap.git")
-# @todo add wp-gitdown
+sites=( "git@bitbucket.org:maadhattah/jamesdigioia.git" "git@bitbucket.org:maadhattah/job-hunter.git" "git@github.com:mAAdhaTTah/vagrantpress.git" "git@bitbucket.org:maadhattah/quenchnj.git" "git@github.com:mAAdhaTTah/roots-semantic-codekit.git" "git@github.com:twbs/bootstrap.git" )
 
 for url in ${sites[@]}; do
+  # @todo deal with location we pull to
   echo "Getting $url..."
-  git clone "$url" ~/Sites/
+  git clone "$url"
 done
 unset soft
 unset configsoft
@@ -113,9 +114,8 @@ unset configsoft
 
 # Add licenses/accounts/config
 
-configsoft = ("Alfred Preferences" "Bartender" "Cinch" "CleanMyMac 2" "Coda 2" "CodeKit" "CrashPlan" "Evernote" "Flux" "Insync" "MoneyWell" "MindNode Pro" "PokerTracker 4" "Duplicate Annihilator" "SuperDuper!" "VirtualBox" "mysms" "xScan" "CleanMyDrive" "POP" "Multimon" "Kindle" "Pocket" "Wunderlist" "Google Drive")
-
-# @todo configure CrashPlan in particular
+configsoft=( "Alfred Preferences" "Bartender" "Cinch" "CleanMyMac 2" "Coda 2" "CodeKit" "CrashPlan" "Evernote" "Flux" "Insync" "MoneyWell" "MindNode Pro" "PokerTracker 4" "Duplicate Annihilator" "SuperDuper!" "VirtualBox" "mysms" "xScan" "CleanMyDrive" "POP" "Multimon" "Kindle" "Pocket" "Wunderlist" "Google Drive" )
+# @todo fix problem with spaces in apps
 
 for soft in ${configsoft[@]}; do
   read -p "Do you want to configure $soft? (y/n) " -n 1
@@ -130,11 +130,18 @@ done
 unset soft
 unset configsoft
 
+read -p "Do you want to run `cask alfred link`? (y/n) " -n 1
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  brew cask link alfred
+fi
+unset $REPLY
+
 # Add OSX accounts
 # @todo include account information here (everything but passwords)
 # @todo handle mail rules
 
-accounts = ("Google Work" "Google Personal" "Twitter" "Facebook" "LinkedIn" "3 email accounts")
+accounts=( "Google Work" "Google Personal" "Twitter" "Facebook" "LinkedIn" "3 email accounts" )
 
 for account in ${accounts[@]}; do
   read -p "Do you want to configure $soft? (y/n) " -n 1

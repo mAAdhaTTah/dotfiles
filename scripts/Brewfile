@@ -48,7 +48,7 @@ cask install dropbox
 cask install deeper
 cask install diffmerge
 cask install evernote
-cask install f-lux
+cask install flux
 cask install filebot
 cask install fluid
 cask install geekbench
@@ -74,4 +74,3 @@ cask install vagrant
 cask install virtualbox
 cask install vlc
 cask install zipeg
-cask alfred link
