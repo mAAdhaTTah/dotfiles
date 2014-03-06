@@ -34,7 +34,20 @@ unset $REPLY
 
 # Ask for each secondary software
 
-secsoft=( "kext-utility" "kext-wizard" "pokertracker" "a-slower-speed-of-light" "backuploupe" "calibre" "debt-quencher" "duplicate-annihilator" "moneywell" "openemu" "pgadmin3" "picard" "slice-eq" "superduper" )
+secsoft=( "kext-utility"
+          "kext-wizard"
+          "pokertracker"
+          "a-slower-speed-of-light"
+          "backuploupe"
+          "calibre"
+          "debt-quencher"
+          "duplicate-annihilator"
+          "moneywell"
+          "openemu"
+          "pgadmin3"
+          "picard"
+          "slice-eq"
+          "superduper" )
 
 for soft in ${secsoft[@]}; do
   read -p "Do you want to use homebrew and cask to install $soft? (y/n) " -n 1
@@ -98,60 +111,107 @@ unset $REPLY
 
 # Get all ~/Sites
 # @todo need to deal with ssh-keys
+# @todo refactor into php script, use Git.php
 
-sites=( "git@bitbucket.org:maadhattah/jamesdigioia.git" "git@bitbucket.org:maadhattah/job-hunter.git" "git@github.com:mAAdhaTTah/vagrantpress.git" "git@bitbucket.org:maadhattah/quenchnj.git" "git@github.com:mAAdhaTTah/roots-semantic-codekit.git" "git@github.com:twbs/bootstrap.git" )
+sites=( "git@bitbucket.org:maadhattah/jamesdigioia.git"
+        "git@bitbucket.org:maadhattah/job-hunter.git"
+        "git@github.com:mAAdhaTTah/vagrantpress.git"
+        "git@bitbucket.org:maadhattah/quenchnj.git"
+        "git@github.com:mAAdhaTTah/roots-semantic-codekit.git"
+        "git@github.com:twbs/bootstrap.git" )
 
+mkdir ~/Sites && cd ~/Sites
 for url in ${sites[@]}; do
   # @todo deal with location we pull to
   echo "Getting $url..."
   git clone "$url"
 done
-unset soft
-unset configsoft
+unset url
+unset sites
+
+cd "$(dirname "${BASH_SOURCE}")"
 
 # @todo set up databases
 # @todo sync databases from remote
 
+# @todo auto-add licenses when possible (many of the Panic apps)
+
+licenses=( "x-coda2-reg://SLXA-YAMA-NYMU-Q887-ABAR-G"
+           "x-transmit4-reg://XPNL-82YB-XKL3-5TZD-4FFM-S"
+           "GAWAE-FB726-2KAYT-228F3-8GQM2-CGTP2-X3U9J-NLLAC-CRKUW-4GQ8E-5W7H3-JW32L-XGCN3-QZWMJ-HANY"
+           "~/Downloads/Cinch.cinchlicense" )
+
 # Add licenses/accounts/config
 
-configsoft=( "Alfred Preferences" "Bartender" "Cinch" "CleanMyMac 2" "Coda 2" "CodeKit" "CrashPlan" "Evernote" "Flux" "Insync" "MoneyWell" "MindNode Pro" "PokerTracker 4" "Duplicate Annihilator" "SuperDuper!" "VirtualBox" "mysms" "xScan" "CleanMyDrive" "POP" "Multimon" "Kindle" "Pocket" "Wunderlist" "Google Drive" )
-# @todo fix problem with spaces in apps
+configsoft=( "Alfred Preferences"
+             "Bartender"
+             "Cinch"
+             "CleanMyMac 2"
+             "Coda 2"
+             "CodeKit"
+             "CrashPlan"
+             "Evernote"
+             "Flux"
+             "Insync"
+             "MoneyWell"
+             "MindNode Pro"
+             "PokerTracker 4"
+             "Duplicate Annihilator"
+             "SuperDuper!"
+             "VirtualBox"
+             "mysms"
+             "xScan"
+             "CleanMyDrive"
+             "POP"
+             "Multimon"
+             "Kindle"
+             "Pocket"
+             "Wunderlist"
+             "Google Drive"
+             "Transmit"
+             "Skype"
+             "CheatSheet"
+             "TweetDeck" )
 
-for soft in ${configsoft[@]}; do
-  read -p "Do you want to configure $soft? (y/n) " -n 1
+for ((i = 0; i < ${#configsoft[@]}; i++)) do
+  read -p "Do you want to configure ${configsoft[$i]}? (y/n) " -n 1
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "Opening $soft for configuration"
-    open -a "$soft.app"
+    echo "Opening ${configsoft[$i]} for configuration"
+    open -a "${configsoft[$i]}.app"
     read -p "Press [Enter] when everything is configured."
   fi
   unset $REPLY
 done
-unset soft
 unset configsoft
 
 read -p "Do you want to run `cask alfred link`? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  brew cask link alfred
+  brew cask alfred link
 fi
 unset $REPLY
 
 # Add OSX accounts
 # @todo include account information here (everything but passwords)
 # @todo handle mail rules
+# @todo notice about thread order
 
-accounts=( "Google Work" "Google Personal" "Twitter" "Facebook" "LinkedIn" "3 email accounts" )
+accounts=( "Google Work"
+           "Google Personal"
+           "Twitter"
+           "Facebook"
+           "LinkedIn"
+           "3 email accounts" )
 
-for account in ${accounts[@]}; do
-  read -p "Do you want to configure $soft? (y/n) " -n 1
+for ((i = 0; i < ${#accounts[@]}; i++)) do
+  read -p "Do you want to configure ${accounts[$i]}? (y/n) " -n 1
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-    read -p "Press [Enter] when you have configured $account."
+    read -p "Press [Enter] when you have configured ${accounts[$i]."
   fi
   unset $REPLY
 done
-unset soft
-unset configsoft
+unset accounts
 
 # @todo add Terminal to right-click services
