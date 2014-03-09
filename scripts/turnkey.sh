@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 cd "$(dirname "${BASH_SOURCE}")"
 
-# Pause installation
-# Tell user to downloads apps from App Store
+# XCode & Mac Store
 
 echo "Step 1:"
 echo "Download all your apps from the Apple App Store."
@@ -11,19 +10,17 @@ read -p "Press [Enter] when everything is downloaded."
 read -p "Now, open Xcode and accept the license. Press [Enter] when you've done that."
 read -p "Don't forget to install Command Line Tools!"
 
-echo "Next up: Homebrew!"
-
 # Install Homebrew
 
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+echo "Next up: Homebrew!"
 
-# Check Homebrew for problems
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 brew doctor
 
 read -p "Fix any problems before moving on. Press [Enter] if you're good to go."
 
-# Install all software
+# Install software
 
 read -p "Do you want to use homebrew and cask to install your required software? (y/n) " -n 1
 echo
@@ -96,8 +93,6 @@ ln -s ~/Dropbox/.z ~/.z
 source gems.sh
 
 # Add Mackup restore
-# Note: we need to ask if we want to keep in sync, or just uninstall
-# @todo sync apache in mackup
 
 echo "Time to run Mackup"
 mackup restore
