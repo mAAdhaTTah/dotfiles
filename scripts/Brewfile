@@ -28,6 +28,8 @@ install postgresql9
 install phpmyadmin
 install bash-completion
 install hr
+install phpdoc
+
 
 # Casks
 

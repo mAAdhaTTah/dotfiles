@@ -92,6 +92,10 @@ ln -s ~/Dropbox/.z ~/.z
 
 source gems.sh
 
+# Install node packages
+
+source nodes.sh
+
 # Add Mackup restore
 
 echo "Time to run Mackup"
@@ -113,7 +117,7 @@ sites=( "git@bitbucket.org:maadhattah/jamesdigioia.git"
         "git@github.com:mAAdhaTTah/vagrantpress.git"
         "git@bitbucket.org:maadhattah/quenchnj.git"
         "git@github.com:mAAdhaTTah/roots-semantic-codekit.git"
-        "git@github.com:twbs/bootstrap.git" )
+        "git@bitbucket.org:mAAdhaTTah/socialworkings.git" )
 
 mkdir ~/Sites && cd ~/Sites
 for url in ${sites[@]}; do
