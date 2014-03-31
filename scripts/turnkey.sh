@@ -134,7 +134,9 @@ cd "$(dirname "${BASH_SOURCE}")"
 licenses=( "x-coda2-reg://SLXA-YAMA-NYMU-Q887-ABAR-G"
            "x-transmit4-reg://XPNL-82YB-XKL3-5TZD-4FFM-S"
            "GAWAE-FB726-2KAYT-228F3-8GQM2-CGTP2-X3U9J-NLLAC-CRKUW-4GQ8E-5W7H3-JW32L-XGCN3-QZWMJ-HANY"
-           "~/Downloads/Cinch.cinchlicense" )
+           "~/Downloads/Cinch.cinchlicense"
+           "codekit2registration://ck**jamesorodig@gmail.comck**H594DR/RZof6/k39tH3IqoJ2p4QSlrNvbhWrFnmXi27PXib5mJeOXOZja/ZV7q5j+sphG6O6Wd1X9ULxSOtI7q5Mo4N9xjDwIPsbKdSf+3dYxWV98t0OeVCQaqsmn34X0Ui/8GUQpSm01ZyEuHvxPgB+IKNy846eoCBgugnSXjBHxQaMCUkNi6SAwwqmvxv3Vj//JDP3GJRwxlODeFP0VhNPt5gr3b5tKA+A4Eo9CBZT8v4yaKC7m26Z71FSAMXcDNmzNr/GsOx40yHIM5ejonYEhKUhk9XzQUuq0+CLAHhi/sw2AZXjddgYTeFHpw+jcpgAp0be6dzmI6FqGmyo/y6JqqkOUmQ+azwvldSXZgoCMwsoz0ZBbSFF/t17H9jLLEi8PfCNYIo/OyCNfT04kife5CdqaLQMq3TYu+EAFqSNl1cgTP/GxcAZZAAw516g4ViOnWQ899kVSIScYdjGbOFDxJOFf7DwLw2ndZ6bXXoNb5gY0N2uFGfWpXZEg9zx+6NyhizxwpM/wwtxKQ9vhR7VIXj1QziwKmzYLMgwma6BAziE4xT4RwQpRkJaSeOgiRmVHa9zAihmLIfKcAGIIf3vIjX+2bOQzRSkEcNe5uk1i5FbfFkXTIBTB+lomYwsqCDFzBZW3br1Qsc2dXOVJCL3sSgSJXNrrRLadTU22M4=ck**ckregistrationend",
+           "SPSD001001-B98A-B942-1DEN-5G0S-5DD1 " )
 
 # Add licenses/accounts/config
 
