@@ -2,7 +2,7 @@
 cd "$(dirname "${BASH_SOURCE}")"
 function doIt() {
         rsync --exclude ".gitignore" --exclude ".git" --exclude ".DS_Store" --exclude "._*" --exclude "bootstrap.sh" \
-                --exclude "README.md" --exclude ".z/" --exclude "Brewfile" --exclude "LICENSE-MIT.txt" \
+                --exclude "README.md" --exclude ".z/" --exclude "Brewfile" --exclude "LICENSE-MIT.txt" --exclude "*.sublime-*" \
                 -av --no-perms . ~
         source ~/.bash_profile
 }
