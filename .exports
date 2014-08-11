@@ -1,0 +1,20 @@
+# Change default editor to Sublime Text
+export EDITOR="subl"
+
+# Make sure homebrew-casks’s default install folder is /Applications
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Larger bash history (allow 32³ entries; default is 500)
+# Source: simonowendesign/dotfiles
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Make sure we're installing gems in the right place
+export GEM_HOME=/usr/local
+
+# Ansible configurations
+export ANSIBLE_FORCE_COLOR=true
+export ANSIBLE_HOST_KEY_CHECKING=false

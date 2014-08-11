@@ -1,8 +1,30 @@
 [core]
         # Use custom `.gitignore` and `.gitattributes`
-        excludesfile = ~/.gitignore
+        excludesfile = ~/.gitignore_global
         attributesfile = ~/.gitattributes
 [mergetool]
-	keepBackup = true
+        keepBackup = true
 [core]
-	fileMode = false
+        fileMode = false
+[color]
+        # Use colors in Git commands that are capable of colored output when outputting to the terminal
+        ui = auto
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+[merge]
+        # Include summaries of merged commits in newly created merge commit messages
+        log = true
+[user]
+        name = mAAdhaTTah
+        email = jamesorodig@gmail.com
