@@ -8,9 +8,6 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done
 unset file
 
-# Load Bash It
-source $BASH_IT/bash_it.sh
-
 # Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
