@@ -50,5 +50,5 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias badge="tput bel"
 
 # Sync Sites up or down
-alias syncup="rsync -zva --delete ~/Sites/ dreedle@pianosa:~/Code"
-alias syncdown="rsync -zva --delete dreedle@pianosa:~/Code/ ~/Sites"
+alias syncup="rsync -zva --delete ~/Code/ dreedle@pianosa:~/Code"
+alias syncdown="rsync -zva --delete dreedle@pianosa:~/Code/ ~/Code"
