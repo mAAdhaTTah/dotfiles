@@ -14,8 +14,5 @@ source $BASH_IT/bash_it.sh
 # Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-# init z https://github.com/rupa/z
-source $HOME/Dropbox/.z/z.sh
-
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
