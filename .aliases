@@ -52,3 +52,7 @@ alias badge="tput bel"
 # Sync Sites up or down
 alias syncup="rsync -zva --delete ~/Code/ dreedle@pianosa:~/Code"
 alias syncdown="rsync -zva --delete dreedle@pianosa:~/Code/ ~/Code"
+
+# Backup my images
+alias backuproma="rsync -zva --delete --exclude=.* /Volumes/Roma\ Image/ dreedle@pianosa:/srv/backups/Roma"
+alias backupbologna="rsync -zva --delete --exclude=.* /Volumes/Bologna\ Image/ dreedle@pianosa:/srv/backups/Bologna"
