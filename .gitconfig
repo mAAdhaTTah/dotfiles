@@ -28,3 +28,5 @@
 [user]
         name = mAAdhaTTah
         email = jamesorodig@gmail.com
+[push]
+        default = simple
