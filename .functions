@@ -1,9 +1,3 @@
-# To start, stop, and restart Apache and MySQL
-webdev() {
-	sudo apachectl $1
-	mysql.server $1
-}
-
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$@"
