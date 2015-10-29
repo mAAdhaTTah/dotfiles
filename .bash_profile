@@ -13,3 +13,10 @@ unset file
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
+
+# Load NVM, if we're using it
+export NVM_DIR="/Users/USNY-JDiGioia/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Automatically check for identity updates before running a git command
+if which karn > /dev/null; then eval "$(karn init)"; fi

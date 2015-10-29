@@ -25,6 +25,9 @@ Temporary Items
 # Cloud9 IDE - http://c9.io
 .c9revisions
 
+# ItelliJ IDEs
+.idea
+
 # SublimeText3 files
 # @source https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
 

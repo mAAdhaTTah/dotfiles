@@ -21,7 +21,7 @@ export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
 # Set editor and git editor
 export EDITOR="subl"
-export GIT_EDITOR='nano'
+export GIT_EDITOR="subl -n -w"
 
 # Set the path nginx
 export NGINX_PATH='/opt/nginx'
