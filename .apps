@@ -1,0 +1,15 @@
+# Path to the bash it configuration
+export BASH_IT="$HOME/.bash_it"
+
+# Lock and Load a custom theme file
+export BASH_IT_THEME="envy"
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
+
+# Load NVM, if we're using it
+export NVM_DIR="/Users/USNY-JDiGioia/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Automatically check for identity updates before running a git command
+if which karn > /dev/null; then eval "$(karn init)"; fi
