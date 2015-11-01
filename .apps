@@ -13,3 +13,6 @@ export NVM_DIR="/Users/USNY-JDiGioia/.nvm"
 
 # Automatically check for identity updates before running a git command
 if which karn > /dev/null; then eval "$(karn init)"; fi
+
+# Load project directories @todo
+export PROJECT_PATHS=~/Code:~/Projects
