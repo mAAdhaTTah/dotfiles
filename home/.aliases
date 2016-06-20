@@ -50,3 +50,6 @@ alias syncdown="rsync -zva --delete dreedle@pianosa:~/Code/ ~/Code"
 # Backup my images
 alias backuproma="rsync -zva --delete --exclude=.* /Volumes/Roma\ Image/ dreedle@pianosa:/srv/backups/Roma"
 alias backupbologna="rsync -zva --delete --exclude=.* /Volumes/Bologna\ Image/ dreedle@pianosa:/srv/backups/Bologna"
+
+# Todo alias
+alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -d $HOME/Dropbox/todo/todo.cfg'
