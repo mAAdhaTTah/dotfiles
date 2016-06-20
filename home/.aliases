@@ -4,14 +4,8 @@ alias .="open ."
 
 # Web development shortcuts
 
-## Apache's config
-alias edit_apache='sudo nano /etc/apache2/httpd.conf'
 ## Redirects for local dev sites (virtual hosts)
 alias edit_hosts='sudo nano /etc/hosts'
-## Virtual hosts
-alias edit_vhosts='sudo nano /etc/apache2/extra/httpd-vhosts.conf'
-## PHP's ini file
-alias edit_phpini='sudo nano /usr/local/etc/php/5.5/php.ini'
 
 # Source: simonowendesign/dotfiles
 
