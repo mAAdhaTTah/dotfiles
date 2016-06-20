@@ -20,8 +20,8 @@ export ANSIBLE_HOST_KEY_CHECKING=false
 export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
 # Set editor and git editor
-export EDITOR="subl"
-export GIT_EDITOR="subl -n -w"
+export EDITOR="atom"
+export GIT_EDITOR="atom --wait"
 
 # Set the path nginx
 export NGINX_PATH='/opt/nginx'
