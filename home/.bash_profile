@@ -24,3 +24,4 @@ for option in autocd globstar; do
     shopt -s "$option" 2> /dev/null
 done
 
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
