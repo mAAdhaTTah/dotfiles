@@ -1,5 +1,5 @@
 # Path to the bash it configuration
-export BASH_IT="$HOME/.settings/.bash_it"
+export BASH_IT="$HOME/ownCloud/settings/.bash_it"
 
 # Lock and Load a custom theme file
 export BASH_IT_THEME="envy"
