@@ -11,4 +11,4 @@ source $BASH_IT/bash_it.sh
 if which karn > /dev/null; then eval "$(karn init)"; fi
 
 # Load project directories @todo
-export PROJECT_PATHS=~/Code:~/Projects
+export PROJECT_PATHS=~/Code/Infra:~/Code/JavaScript:~/Code/Kitchenplan:~/Code/PHP:~/Code/Projects:~/Code/Wordpress:~/Code/Wordpress/plugins:~/Code/Wordpress/sites:~/Code/Wordpress/themes
