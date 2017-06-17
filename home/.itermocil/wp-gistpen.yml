@@ -1,0 +1,23 @@
+windows:
+    - name: "wp-gistpen"
+      root: "~/Code"
+      layout: double-main-horizontal
+      panes:
+        - commands:
+            - pj jamesdigioia.com
+            - cd server
+            - vup
+        - commands:
+            - pj jamesdigioia.com
+            - cd site
+            - tail -f web/app/debug.log
+        - commands:
+            - pj jamesdigioia.com
+            - cd site
+        - commands:
+            - pj wp-gistpen
+            - trash node_modules
+            - yarn
+            - gulp dev:app
+        - commands:
+            - pj wp-gistpen
