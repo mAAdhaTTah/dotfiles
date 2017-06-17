@@ -10,5 +10,5 @@ source $BASH_IT/bash_it.sh
 # Automatically check for identity updates before running a git command
 if which karn > /dev/null; then eval "$(karn init)"; fi
 
-# Load project directories @todo
-export PROJECT_PATHS=~/Code/Infra:~/Code/JavaScript:~/Code/Kitchenplan:~/Code/PHP:~/Code/Projects:~/Code/Wordpress:~/Code/Wordpress/plugins:~/Code/Wordpress/sites:~/Code/Wordpress/themes
+# Load project directories
+export PROJECT_PATHS=~/Code/Infra:~/Code/JavaScript:~/Code/Kitchenplan:~/Code/PHP:~/Code/Projects:~/Code/Wordpress:~/Code/Wordpress/plugins:~/Code/Wordpress/sites:~/Code/Wordpress/themes:~/Code/Work
